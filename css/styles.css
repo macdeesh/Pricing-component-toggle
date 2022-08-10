@@ -1,0 +1,222 @@
+:root {
+    --Very-Light-Grayish-Blue: hsl(240, 78%, 98%);
+    --Light-Grayish-Blue: hsl(234, 14%, 74%);
+    --Grayish-Blue: hsl(233, 13%, 49%);
+    --Dark-Grayish-Blue: hsl(232, 13%, 33%);
+    --Primary-Gradient: hsl(236, 72%, 79%);
+    --Secondary-Gradient: hsl(237, 63%, 64%);
+    --White: hsl(0, 0%, 100%);
+    --Border-radius: 8px;
+}
+
+body,
+.heading,
+.card,
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.option-cards,
+.toggle-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+body {
+    justify-content: center;
+    gap: 3rem;
+    min-height: 100vh;
+    background: url(../images/bg-top.svg) 100% 0, url(../images/bg-bottom.svg) 0 100%, var(--Very-Light-Grayish-Blue);
+    background-repeat: no-repeat;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+}
+
+h1 {
+    color: var(--Grayish-Blue);
+}
+
+.toggle-section {
+    gap: 1.5rem;
+}
+
+.toggle-section p {
+    font-size: 0.8rem;
+    color: var(--Light-Grayish-Blue);
+}
+
+/* TOGGLE */
+
+.toggle {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.toggle-switch {
+    display: inline-block;
+    background: var(--Secondary-Gradient);
+    border-radius: 16px;
+    width: 44px;
+    height: 22px;
+    position: relative;
+    vertical-align: middle;
+}
+
+.toggle-switch:before,
+.toggle-switch:after {
+    content: "";
+}
+
+.toggle-switch:before {
+    display: block;
+    background: var(--White);
+    border: none;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    transition: left 0.3s;
+}
+
+.toggle-switch:hover {
+    background: var(--Primary-Gradient);
+    transition: background 0.3s;
+}
+
+.toggle-checkbox:checked+.toggle-switch:before {
+    left: 26px;
+}
+
+.toggle-checkbox {
+    position: absolute;
+    visibility: hidden;
+}
+
+/*  */
+
+.card {
+    text-align: center;
+    width: 250px;
+    padding: 1rem;
+    background: var(--White);
+    color: var(--Grayish-Blue);
+    box-shadow: 0 5px 15px -10px var(--Secondary-Gradient);
+}
+
+.basic-card {
+    border-bottom-left-radius: var(--Border-radius);
+    border-top-left-radius: var(--Border-radius);
+}
+
+.pro-card {
+    color: var(--White);
+    padding: 2rem 1rem;
+    border-radius: var(--Border-radius);
+    background: linear-gradient(135deg, var(--Primary-Gradient) 10%, var(--Secondary-Gradient) 80%);
+}
+
+.master-card {
+    border-bottom-right-radius: var(--Border-radius);
+    border-top-right-radius: var(--Border-radius);
+}
+
+.card p {
+    margin: 0.5rem 0;
+}
+
+.card p::after {
+    opacity: 0.6;
+    display: block;
+    content: '';
+    width: 230px;
+    height: 1px;
+    margin-top: 1rem;
+    background: var(--Light-Grayish-Blue);
+}
+
+.title span {
+    margin: 1rem 0;
+    font-size: 3rem;
+    color: var(--Dark-Grayish-Blue);
+}
+
+.pro-card .title span {
+    color: var(--White);
+}
+
+.yearly-amount {
+    display: none;
+}
+
+/* BUTTON  */
+
+.button {
+    margin-top: 1rem;
+    padding: 0.7rem 3.9rem;
+    color: var(--White);
+    background: var(--Secondary-Gradient);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    transition: all 0.5s ease-in-out;
+    letter-spacing: 0.1em;
+}
+
+.button:hover {
+    outline: 1px solid var(--Secondary-Gradient);
+    color: var(--Secondary-Gradient);
+    background: transparent;
+}
+
+.pro-button {
+    background: var(--White);
+    color: var(--Secondary-Gradient);
+}
+
+.pro-button:hover {
+    outline: 1px solid var(--White);
+    color: var(--White);
+}
+
+/*  */
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* MOBILE */
+
+@media (max-width: 880px) {
+
+    body {
+        background: url(../images/bg-top.svg) 100% 0, var(--Very-Light-Grayish-Blue);
+        background-repeat: no-repeat;
+    }
+
+    .heading {
+        margin-top: 2rem;
+    }
+
+    .option-cards {
+        flex-direction: column;
+        gap: 2rem;
+        margin: 3rem 0 2rem;
+    }
+
+    .card {
+        border-radius: var(--Border-radius);
+    }
+}
