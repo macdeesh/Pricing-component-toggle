@@ -95,6 +95,9 @@ h1 {
 .toggle-checkbox {
     position: absolute;
     visibility: hidden;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 /*  */
@@ -168,6 +171,9 @@ h1 {
     margin-bottom: 1rem;
     transition: all 0.5s ease-in-out;
     letter-spacing: 0.1em;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .button:hover {
@@ -208,6 +214,10 @@ h1 {
 
     .heading {
         margin-top: 2rem;
+    }
+    
+    .toggle-section {
+    gap: 2.5rem;
     }
 
     .option-cards {
